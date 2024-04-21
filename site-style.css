@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'DINaltLight';  /* Name you will use for referencing the font in CSS */
+    src: url('/fonts/DIN Alternate Light.ttf') format('TrueType');  /* Path to the font file and its format */
+}
+
+:root {
+    --primary-color: #f8cd3f;   /* Example primary color */
+    --secondary-color: #123846; /* Example secondary color */
+    --text-color: #ffffff;      /* Example default text color */
+    --text-bg-color: #1F5C72; /* Example header background color */
+    --text-bg-colorRGB: 31, 92, 114;
+}
+
+a:link {
+    color: var(--secondary-color);
+}
+
+a:visited {
+    color: darkorchid;
+}
+
+/*the zero margin here overcomes the safety few px margin auto added so the banner looks
+good, we remove it here but that means we need to be a bit more careful with other elements*/
+body {
+    font-family: "DINaltLight", sans-serif;
+    color: var(--text-color);
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+/*This just deals with the background image*/
+body {
+    background-image: url('images/Thailand 3.jpg');
+    background-size: cover;  /* Cover ensures the image covers the full view at all times */
+    background-position: center; /* Centers the image in the viewport */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Optional: makes the background fixed during scroll */
+}
+
+.sticky-header {
+    position: fixed;  /* Key property for the sticky effect */
+    top: 0;          /* Align the banner at the top of the viewport */
+    width: 100%;     /* Make it span the full width of the viewport */
+    background-color: var(--primary-color);
+    border-bottom: 1px solid #91b3ff; /* A subtle border at the bottom */
+    padding: 35px 0; /* Some vertical padding */
+    /*box-shadow: 0 2px 4px rgba(0,0,0,0.1); !* Optional: adds shadow for better separation *!*/
+    z-index: 1000;   /* Ensure it stays on top of other content */
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    border-top: 1px solid #91b3ff; /* A subtle border at the bottom */
+    padding: 35px;
+    font-size: 14px;
+}
+
+/*.footer-text {*/
+/*    padding-left: 35px;*/
+/*}*/
+
+.content {
+    padding-top: 180px; /* Add padding to ensure content is not hidden under the fixed header */
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+/*Applied to 2 main content blocks, will sit in the middle and expand to a max 900px wide*/
+.centered-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;  /* Adjust this value based on your design needs */
+}
+
+.banner-logo {
+    padding: 40px; /* Space out links within the banner */
+}
+
+.title {
+    display: block;
+    font-size: 60px;
+    color: white;
+    letter-spacing:0.03em;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    display: block;
+    font-size: 30px;
+    color: white;
+    letter-spacing:0.03em;
+    margin-bottom: 20px;
+}
+
+.twoColumn {
+    display: flex;  /* Enables Flexbox */
+    align-items: stretch;  /* Aligns children vertically in the middle */
+    justify-content: space-between;  /* Puts spacing between the flex items */
+    flex-direction: column; /* Stack vertically on narrow screens */
+}
+
+.text-box, .image-box {
+    flex: 1;  /* Each child will take up equal amount of space */
+}
+
+.text-box {
+    /*padding: 20px 40px;*/
+    padding: 1vh 3vw; /* Relative to viewport height and width */
+    margin-bottom: 20px;
+    background-color: rgba(var(--text-bg-colorRGB), 0.8);
+}
+
+.image-box{
+    background-color: var(--secondary-color);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.image-box img {
+    width: 100%;  /* Makes the image expand to fill the container */
+    height: auto;  /* Keeps the image aspect ratio intact */
+    object-fit: contain;
+    display: block;
+    filter: grayscale(10%);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Divides the row into two columns: 1 part for the label and 2 parts for the input */
+    align-items: normal; /* Vertically centers the label and input */
+    gap: 10px; /* Adds space between the label and the input */
+    margin-bottom: 20px; /* Adds space below each row */
+    margin-right: 20px;
+}
+
+.form-row-button {
+    max-width: 300px;
+}
+
+input, textarea {
+    width: 100%; /* Ensures inputs take up the full grid column */
+    padding: 8px; /* Adds some padding inside the input for better readability */
+}
+
+label {
+    padding-right: 10px; /* Optionally adds padding to the right of the label */
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+.upcomming-concerts {
+    margin-bottom: 100px;
+}
+
+@media (min-width: 768px) { /* Common breakpoint for tablets and desktops */
+    .twoColumn {
+        flex-direction: row; /* Switch to horizontal layout */
+        align-items: flex-start; /* Align items at the start of the flex container */
+    }
+
+    .content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1000px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr 3fr; /* Maybe provide more space for input on larger screens */
+    }
+
+}
+
+
