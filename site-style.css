@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'DINaltLight';  /* Name you will use for referencing the font in CSS */
-    src: url('/fonts/DIN Alternate Light.ttf') format('TrueType');  /* Path to the font file and its format */
+    src: url('fonts/DIN Alternate Light.ttf') format('TrueType');  /* Path to the font file and its format */
 }
 
 :root {
