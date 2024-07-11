@@ -1,12 +1,15 @@
 This is my website, initially just for music work
 
-Jobs - fonts and images are not working
+Jobs - 
 
+Change my gandhi domain to point to here.
+
+Close neocities.
 
 Completed -
 
 push / pull from clion not currently working
-{
+
 ## Resolving Git Issues: Diverging Branches and `.DS_Store` Files
 
 This section outlines the steps taken to resolve issues with diverging branches and unwanted `.DS_Store` files in a Git repository.
@@ -64,3 +67,15 @@ Always pull before starting work so that you are working on the latest version o
 Be Cautious with Web Edits: Making edits directly on GitHub while also working on files locally increases the likelihood of conflicts. If you do make changes online (such as editing README files or documentation), pull these changes to your local repository before continuing your work.
 
 Ignore DS_store: They are just for folder views and other OS display specific option, they will be nothing to do with the project.
+
+
+
+
+
+fonts and images are not working
+
+This was solved fairly easily by making sure the font face type was truetype not TrueType, changing the name to have no spaces and fixing the location the css file was looking for the font in.
+
+Previously I had ../fonts/font.ttf which is looking for the font folder in the directory above the css file, but it should have been IN the css files folder. It's likely this was the main cause.
+
+I also note that the browser caches css heavily to save performace so you need to clear the cache and then reload from source to see changes. cmnd+shift+r to refresh the webpage without the cahce. In doing so you see a very plain page, indicating loads of the content is from the cache.
